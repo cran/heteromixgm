@@ -14,14 +14,14 @@ heteromixgm(X, method, lambda1, lambda2, ncores)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{X}{A list containing \eqn{k} \eqn{n_k \times p} matrices (\eqn{n_k} is
+  \item{X}{A list containing \eqn{K} \eqn{n_k \times p} matrices (\eqn{K} is the number of groups, \eqn{n_k} is
   the sample size for group \eqn{k} and \eqn{p} is the number of variables}
   \item{method}{Choice between "Gibbs" and "Approximate" indicating which
   method to use.}
   \item{lambda1}{Vector containing values (in [0,1]) for the sparsity
-  penalization of each \eqn{Theta^k}.}
+  penalization of each \eqn{\Theta^k}.}
   \item{lambda2}{Vector containing values (in [0,1]) for the similarity
-  penalization between the \eqn{Theta^k}.}
+  penalization between the \eqn{\Theta^k}.}
   \item{ncores}{Number of cores to be used during parallel computing.}
 }
 

@@ -176,7 +176,7 @@ Approx_method <- function(y, Z, ES=NULL, lambdas, lower_upper=NULL, combination 
   setup_approx = function(y, Z, ES=NULL, lambdas, lower_upper=NULL, combination = 1, em_tol=.001, em_iter=10, ncores)
   {
     K <- length(y)
-    if ("numeric" %in% class("lambdas"))
+    if (is.null(dim(lambdas)))
     {
       obj <- fused_gl_copula(S = ES, Y = y, lambda1 = lambdas[1], lambda2 = lambdas[2], maxiter=1000, penalize.diagonal=FALSE)
     }
@@ -195,7 +195,7 @@ Approx_method <- function(y, Z, ES=NULL, lambdas, lower_upper=NULL, combination 
       Sigma[[k]] <- diag(1/sd_marginal[[k]]) %*% Sigma[[k]] %*% diag(1/sd_marginal[[k]])
       Theta[[k]] <- diag(sd_marginal[[k]]) %*% Theta[[k]] %*% diag(sd_marginal[[k]])
     }
-    if ("numeric" %in% class("lambdas"))
+    if (is.null(dim(lambdas)))
     {
       approx.method <- calculate_EM_approx(combination = combination, y=y, Z=Z, lambda1 = lambdas[1], lambda2 = lambdas[2], Sigma=Sigma, Theta= Theta, lower_upper=lower_upper, em_tol=em_tol, em_iter = em_iter, ncores = ncores)
     }
@@ -203,7 +203,7 @@ Approx_method <- function(y, Z, ES=NULL, lambdas, lower_upper=NULL, combination 
     {
       approx.method <- calculate_EM_approx(combination = combination, y=y, Z=Z, lambda1 = lambdas[combination,1], lambda2 = lambdas[combination,2], Sigma=Sigma, Theta= Theta, lower_upper=lower_upper, em_tol=em_tol, em_iter = em_iter, ncores = ncores)
     }
-
+    
 
     invisible(return(approx.method))
   }

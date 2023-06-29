@@ -143,7 +143,7 @@ Gibbs_method <- function(y, lambdas=lambdas, n_lambda=n_lambda, Theta = Theta, c
 
     return(results)
   }
-  if ("numeric" %in% class("lambdas"))
+  if (is.null(dim(lambdas)))
   {
     Gibbs.method <- calculate_EM_Gibbs(combination, y, lambda1 = lambdas[1], lambda2 = lambdas[2], Theta=Theta, lower_upper = lower_upper, em.tol = em.tol, em.iter = max.elongation, gibbs.iter = 500, mc.iter = 1000, ncores = ncores)
   }
