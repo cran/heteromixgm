@@ -37,8 +37,9 @@ data.}
 }
 
 \references{
-1. Hermes, S., van Heerwaarden, J., and Behrouzi, P. (2022). Copula graphical
-models for heterogeneous mixed data. arXiv preprint, arXiv:2210.13140. \cr
+1. Hermes, S., van Heerwaarden, J., & Behrouzi, P. (2024). 
+Copula graphical models for heterogeneous mixed data. 
+Journal of Computational and Graphical Statistics, 1-15. \cr
 }
 
 \author{

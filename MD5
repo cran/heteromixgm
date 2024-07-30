@@ -1,4 +1,4 @@
-928061da94f5aee11893b13fd29b085d *DESCRIPTION
+8c8cc2919c6b62f88ea6872abdd5edc5 *DESCRIPTION
 88e7962853b2ea2dec12c60559c1069f *NAMESPACE
 376aac91a5ed9759e0833dfaf9076e0e *R/Approx_method.R
 a48a0306fe177793c5dfb1560d755549 *R/FGL.R
@@ -6,11 +6,11 @@ a48a0306fe177793c5dfb1560d755549 *R/FGL.R
 4b6571c9a78525e193bca8aad9921359 *R/data_sim.R
 869fd53298fd34fee4b43d6df5497a33 *R/globals.R
 97d0945ec101c7e0ef46a1288eb50ed4 *R/heteromixgm.R
-7bcd6b5b493d47a00c4a15138e62833b *R/modselect.R
+2e320c85e22616894392a3839567a278 *R/modselect.R
 e0176b0a4b746776ca283a0ecbd89133 *data/maize.rda
-776d498d647beb4f149869a690021cc9 *man/data_sim.Rd
-fd9f9a9a7e8a0e0b2e4fa25b0deb5603 *man/heteromixgm.Rd
-b920a14876c85e030d384f66153bdc74 *man/initialize.Rd
-1d712c0d765604a593e1e2ef40753829 *man/lower.upper.Rd
-823196b0deb437a971b76b20d000cdf6 *man/maize.Rd
-b3a33bd72225806c217e1bfa933598ff *man/modselect.Rd
+1eaddac120805bd204132eee576ee4d5 *man/data_sim.Rd
+484bfd54c4cb14703390b611ad3db858 *man/heteromixgm.Rd
+a53df07e28b5573ce8c152f8f3fc5a4a *man/initialize.Rd
+24b70fc9e30a95ee7721c561a8cf8066 *man/lower.upper.Rd
+0b9f33263832a436a7b4a0f3ea07f778 *man/maize.Rd
+806debfe8d18e746e1c575103078ead6 *man/modselect.Rd

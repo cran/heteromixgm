@@ -29,7 +29,7 @@ modselect <- function(est, X, l1, l2, gamma){
       # nonzero elements penalty
       nu[i,k] <- sum(A[[i]][[k]][upper.tri(A[[i]][[k]])])
       # likelihood
-      lik_mat[i,k] <- n[k]/2 *(determinant(as.matrix(thetas[[i]][[k]]), logarithm = TRUE)$modulus - sum(diag(as.matrix(est[[1]]$ES[[k]]) %*%as.matrix(thetas[[i]][[k]]))))
+      lik_mat[i,k] <- -n[k] *(determinant(as.matrix(thetas[[i]][[k]]), logarithm = TRUE)$modulus - sum(diag(as.matrix(est[[1]]$ES[[k]]) %*%as.matrix(thetas[[i]][[k]]))))
 
       # (e)BIC penalties
       lognu[i,k] <- log(n[k]) * nu[i,k]
@@ -39,26 +39,16 @@ modselect <- function(est, X, l1, l2, gamma){
     lik[i] <- sum(lik_mat[i,])
 
     # information criteria
-    aic[i] <- ( - 2 * lik[i] ) + ( 2 * sum(nu[i,]) )
-    bic[i] <- -2 * lik[i] + sum(lognu[i,])
-    ebic[i] <- - 2 * lik[i] + sum(lognu[i,]) + sum(rhs[i,])
+    aic[i] <- ( lik[i] ) + ( 2 * sum(nu[i,]) )
+    bic[i] <- lik[i] + sum(lognu[i,])
+    ebic[i] <- lik[i] + sum(lognu[i,]) + sum(rhs[i,])
   }
 
-  # doe ook de BIC
-  aic_idx <- which.min(aic)
-  bic_idx <- which.min(bic)
-  ebic_idx <- which.min(ebic)
+  theta_aic <- est[[which.min(aic)]]$Theta 
+  theta_bic <- est[[which.min(bic)]]$Theta 
+  theta_ebic <- est[[which.min(ebic)]]$Theta 
 
-  l1_aic <- as.numeric(expand.grid(l1, l2)[aic_idx,][1])
-  l2_aic <- as.numeric(expand.grid(l1, l2)[aic_idx,][2])
-  l1_bic <- as.numeric(expand.grid(l1, l2)[bic_idx,][1])
-  l2_bic <- as.numeric(expand.grid(l1, l2)[bic_idx,][2])
-  l1_ebic <- as.numeric(expand.grid(l1, l2)[ebic_idx,][1])
-  l2_ebic <- as.numeric(expand.grid(l1, l2)[ebic_idx,][2])
-
-  returnlist <- list("aic_idx" = aic_idx, "bic_idx" = bic_idx, "ebic_idx" = ebic_idx,
-                     "l1_aic" = l1_aic, "l2_aic" = l2_aic, "l1_bic" = l1_bic,
-                     "l2_bic" = l2_bic, "l1_ebic" = l1_ebic, "l2_ebic" = l2_ebic)
+  returnlist <- list("theta_aic" = theta_aic, "theta_bic" = theta_bic, "theta_ebic" = theta_ebic)
   return(returnlist)
 }
 

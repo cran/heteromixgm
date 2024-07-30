@@ -15,17 +15,19 @@ variables measured across 2 groups. The groups pertain to different seasons
 List of 2
 }
 \details{
-Contains a subset of data used in the Hermes et al. (2022) paper, which is
+Contains a subset of data used in the Hermes et al. (2024) paper, which is
 a subset
 of data used in the Vasco Silva et al. (forthcoming) paper.
 }
 \source{
-1. Hermes, S., van Heerwaarden, J., and Behrouzi, P. (2022). Copula graphical
-models for heterogeneous mixed data. arXiv preprint, arXiv:2210.13140. \cr
+1. Hermes, S., van Heerwaarden, J., & Behrouzi, P. (2024). 
+Copula graphical models for heterogeneous mixed data. 
+Journal of Computational and Graphical Statistics, 1-15. \cr
 }
 \references{
-1. Hermes, S., van Heerwaarden, J., and Behrouzi, P. (2022). Copula graphical
-models for heterogeneous mixed data. arXiv preprint, arXiv:2210.13140. \cr
+1. Hermes, S., van Heerwaarden, J., & Behrouzi, P. (2024). 
+Copula graphical models for heterogeneous mixed data. 
+Journal of Computational and Graphical Statistics, 1-15. \cr
 2. Vasco Silva, J., J. van Heerwaarden, R. Pytrik, A. G. Laborte, K. Tesfaye,
 and M. K. van Ittersum (forthcoming). Big data, small explanatory power?
 lessons learnt with random forest predictive modeling of crop yield in

@@ -4,7 +4,7 @@
 \title{modselect}
 
 \description{
-Model selection using the AIC and eBIC.
+Model selection using the AIC, BIC and eBIC.
 }
 
 \usage{
@@ -20,19 +20,15 @@ modselect(est, X, l1, l2, gamma)
 }
 
 \value{
-\item{aic_idx}{Index of the estimated model corresponding to the optimal model
-as per the AIC.}
-\item{ebic_idx}{Index of the estimated model corresponding to the optimal model
-as per the eBIC.}
-\item{l1_aic}{Optimal l1 value as per the AIC.}
-\item{l2_aic}{Optimal l2 value as per the AIC.}
-\item{l1_ebic}{Optimal l1 value as per the eBIC.}
-\item{l2_ebic}{Optimal l1 value as per the eBIC.}
+\item{theta_aic}{Estimated precision matrices using the AIC for model selection.}
+\item{theta_bic}{Estimated precision matrices using the BIC for model selection.}
+\item{theta_ebic}{Estimated precision matrices using the EBIC for model selection.}
 }
 
 \references{
-1. Hermes, S., van Heerwaarden, J., and Behrouzi, P. (2022). Copula graphical
-models for heterogeneous mixed data. arXiv preprint, arXiv:2210.13140. \cr
+1. Hermes, S., van Heerwaarden, J., & Behrouzi, P. (2024). 
+Copula graphical models for heterogeneous mixed data. 
+Journal of Computational and Graphical Statistics, 1-15. \cr
 }
 
 \author{
