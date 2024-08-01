@@ -15,3 +15,4 @@ importFrom( "stats", "cor", "dnorm", "pnorm", "qnorm", "runif", "rnorm", "rchisq
 importFrom( "utils", "flush.console", "globalVariables")
 importFrom( "MASS", "sammon", "mvrnorm")
 importFrom( "stats", "qbinom", "qpois")
+importFrom( "graphics", "par")

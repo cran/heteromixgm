@@ -43,12 +43,19 @@ modselect <- function(est, X, l1, l2, gamma){
     bic[i] <- lik[i] + sum(lognu[i,])
     ebic[i] <- lik[i] + sum(lognu[i,]) + sum(rhs[i,])
   }
+  
+  selectmat <- matrix(NA, 3, 2)
+  rownames(selectmat) <- c("AIC", "BIC", "eBIC")
+  colnames(selectmat) <- c("l1", "l2")
+  selectmat[1,] <- as.numeric(expand.grid(l1, l2)[which.min(aic),])
+  selectmat[2,] <- as.numeric(expand.grid(l1, l2)[which.min(bic),])
+  selectmat[3,] <- as.numeric(expand.grid(l1, l2)[which.min(ebic),])
 
   theta_aic <- est[[which.min(aic)]]$Theta 
   theta_bic <- est[[which.min(bic)]]$Theta 
   theta_ebic <- est[[which.min(ebic)]]$Theta 
 
-  returnlist <- list("theta_aic" = theta_aic, "theta_bic" = theta_bic, "theta_ebic" = theta_ebic)
+  returnlist <- list("selectmat" = selectmat, "theta_aic" = theta_aic, "theta_bic" = theta_bic, "theta_ebic" = theta_ebic)
   return(returnlist)
 }
 

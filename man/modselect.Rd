@@ -20,6 +20,8 @@ modselect(est, X, l1, l2, gamma)
 }
 
 \value{
+\item{selectmat}{Matrix containing the "optimal" l1 and l2 values for each
+information criterion.}
 \item{theta_aic}{Estimated precision matrices using the AIC for model selection.}
 \item{theta_bic}{Estimated precision matrices using the BIC for model selection.}
 \item{theta_ebic}{Estimated precision matrices using the EBIC for model selection.}
