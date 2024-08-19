@@ -4,6 +4,7 @@ export(data_sim)
 export(modselect)
 export(lower.upper)
 export(initialize)
+export(plot_pcorgraph)
 
 import("Matrix", "igraph", "parallel")
 
